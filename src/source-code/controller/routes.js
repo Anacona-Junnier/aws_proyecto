@@ -154,29 +154,4 @@ api.post("/path3", async (request, response) => {
   }
 });
 
-// New GET route to get item from DynamoDB
-/*api.get("/item/:id", async (request, response) => {
-  try {
-    const { id } = request.params;
-
-    // Get the item from DynamoDB
-    const dynamoDBItem = await getDynamoDBItem({ id });
-
-    if (dynamoDBItem) {
-      response
-        .status(StatusCodes.OK)
-        .json(dynamoDBItem);
-    } else {
-      response
-        .status(StatusCodes.NOT_FOUND)
-        .json({ msg: "Item not found" });
-    }
-  } catch (error) {
-    console.error("Error", error);
-    response
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({ msg: "Internal Server Error" });
-  }
-});*/
-
 module.exports = api;

@@ -43,20 +43,9 @@ const putDynamoDBItem = async (item) => {
   console.info("PUT PARAMS", params);
 
   try {
-    //return params.Item.id_publicaciones;
     //crear los datos en la DynamoDB
     const command = new PutCommand(params);
     await dynamodb.send(command);
-
-    //comprobar que se han creado los datos
-    //const command = new GetCommand(params.Item.id_publicaciones);
-    //const response = await dynamodb.send(command);
-    //return response;
-    /*if (response.Item) {
-      return response.Item;
-    } else {
-      return response.Item;
-    }*/
   } catch (error) {
     console.error(error);
     throw error;
